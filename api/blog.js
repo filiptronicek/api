@@ -21,7 +21,7 @@ module.exports = (_req, res) => {
 
                     const revisionsURL = `https://github.com/filiptronicek/blog/commits/master/${fileName}`;
 
-                    posts.push({title: title, revisions: revisionsURL});
+                    posts.push({title: title, revisions: revisionsURL, content: dta});
                     if(i === posts.length + 1) res.send((posts));
                 });
             }
