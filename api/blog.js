@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-module.exports = (res, req) => {
+module.exports = (_req, res) => {
     fetch("https://api.github.com/repos/filiptronicek/blog/git/trees/master?recursive=1").then((response) => response.json()).then((data) => {
         let posts = [];
         let i = 0;
