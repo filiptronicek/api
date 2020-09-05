@@ -20,8 +20,15 @@ module.exports = (_req, res) => {
                     }
 
                     const revisionsURL = `https://github.com/filiptronicek/blog/commits/master/${fileName}`;
+                    const fileParts = filename.split("/")[1].replace(".md", "").split("-");
+                    const postDate = new Date(`${fileParts[0]}, ${fileParts[1]}, ${fileParts[2]}`);
 
-                    posts.push({title: title, revisions: revisionsURL, content: dta});
+                    const date = {
+                        timestamp: postDate.getTime(),
+                        readableDate: postDate.toDateString()
+                    };
+
+                    posts.push({title: title, revisions: revisionsURL, date: date.readableDate, timestamp: date.timestamp, content: dta});
                     if(i === posts.length + 1) res.send((posts));
                 });
             }
