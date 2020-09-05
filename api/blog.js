@@ -13,9 +13,9 @@ module.exports = (_req, res) => {
                 .then(resp => resp.text())
                 .then(dta => {
                     let title = fileName.replace('_posts/', '')[1];
-                    if (dta.split("\n")[1].includes("title")) {
-                        title = dta.split("\n")[1].replace('title: ', '');
-                    } else if (dta.split("\n")[2].includes("title")) {
+                    if (dta.includes('layout: post')) {
+                        title = dta.split("\n")[2].replace('title: ', '');
+                    } else {
                         title = dta.split("\n")[1].replace('title: ', '');
                     }
 
