@@ -1,9 +1,11 @@
 {
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "headers": { "Access-Control-Allow-Origin": "*" },
-        "continue": true
-      }
-    ]
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      },
+      "continue": true
+    }
+  ]
 }
