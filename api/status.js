@@ -4,7 +4,7 @@ const successCodes = [200, 201, 202, 204, 301, 302, 307, 308];
 
 export default (req, res) => {
 
-  const urlList = req.query.url.split(",") || ["https://trnck.dev", "https://blog.trnck.dev"];
+  const urlList = req.query.url && req.query.url.split(",") || ["https://trnck.dev", "https://blog.trnck.dev"];
 
   function getStatus(url) {
     return new Promise((resolve, _reject) => {
