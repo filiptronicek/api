@@ -42,7 +42,7 @@ module.exports = (_req, res) => {
             const sum = bandwidths.reduce((a, b) => a + b, 0);
             if (i++ === resp.result.length - 1) {
               res.send({
-                status: "sucess",
+                status: "success",
                 result: { bytes: sum, humanReadable: formatBytes(sum, 2) },
               });
             }
