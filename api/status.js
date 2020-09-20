@@ -23,6 +23,10 @@ export default (req, res) => {
 
   Promise.all(promiseList).then((resultList) => {
     const jsonString = ({status: "success", result: resultList });
+
+    /* Lambda responce */
+
+    res.setHeader('Cache-Control', 's-maxage=86400');
     res.send((jsonString));
   });
 };
