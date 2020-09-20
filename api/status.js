@@ -14,7 +14,6 @@ export default (req, res) => {
                   status: !error && successCodes.includes(response.statusCode)
                       ? "OK"
                       : "Down: " + error.message,
-                  code: response.statusCode
               });
           });
     });
