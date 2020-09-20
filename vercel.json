@@ -6,6 +6,10 @@
         "Access-Control-Allow-Origin": "*"
       },
       "continue": true
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/$1"
     }
   ]
 }
