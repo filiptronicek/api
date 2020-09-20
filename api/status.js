@@ -1,8 +1,10 @@
 import request from "request";
 
-const urlList = ["https://trnck.dev", "https://blog.trnck.dev"];
 
-export default (_req, res) => {
+export default (req, res) => {
+
+  const urlList = req.query.url.split(",") || ["https://trnck.dev", "https://blog.trnck.dev"];
+
   function getStatus(url) {
     return new Promise((resolve, _reject) => {
       request(url, (error, response, _body) => {
@@ -19,7 +21,7 @@ export default (_req, res) => {
   let promiseList = urlList.map((url) => getStatus(url));
 
   Promise.all(promiseList).then((resultList) => {
-    const jsonString = ({ ...resultList });
+    const jsonString = ({status: "success", result: resultList });
     res.send((jsonString));
   });
 };
