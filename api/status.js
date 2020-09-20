@@ -18,7 +18,7 @@ export default (req, res) => {
     });
   }
 
-  let promiseList = urlList.map((url) => getStatus(url));
+  const promiseList = urlList.map((url) => getStatus(url));
 
   Promise.all(promiseList).then((resultList) => {
     const jsonString = ({status: "success", result: resultList });
