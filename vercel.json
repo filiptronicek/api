@@ -8,6 +8,10 @@
       "continue": true
     },
     {
+      "src": "/",
+      "dest": "/api/status"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/$1"
     }
