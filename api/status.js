@@ -1,5 +1,6 @@
 import request from "request";
 
+const successCodes = [200, 201, 202, 204, 301, 302, 307, 308];
 
 export default (req, res) => {
 
@@ -10,9 +11,10 @@ export default (req, res) => {
       request(url, (error, response, _body) => {
               resolve({
                   site: url,
-                  status: !error && response.statusCode === 200
+                  status: !error && successCodes.includes(response.statusCode)
                       ? "OK"
                       : "Down: " + error.message,
+                  code: response.statusCode
               });
           });
     });
