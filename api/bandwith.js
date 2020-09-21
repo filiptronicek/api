@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 require("dotenv").config();
 
 const CFAuth = process.env.CF_TOKEN;
-const VCAuth = process.env.VERCEL_TOKEN;
+const VCAuth = process.env.VC_TOKEN;
 
 /* Config */
 const listEndpoint = "https://api.cloudflare.com/client/v4/zones";
