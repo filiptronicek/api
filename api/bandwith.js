@@ -42,7 +42,7 @@ module.exports = (_req, res) => {
             const sum = bandwidths.reduce((a, b) => a + b, 0);
             if (i++ === resp.result.length - 1) {
               res.setHeader('Cache-Control', 's-maxage=86400');
-              res.send({
+              res.status(200).send({
                 status: "success",
                 result: { bytes: sum, humanReadable: formatBytes(sum, 2) },
               });

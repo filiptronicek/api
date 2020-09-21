@@ -27,6 +27,6 @@ export default (req, res) => {
     /* Lambda responce */
 
     res.setHeader('Cache-Control', 's-maxage=86400');
-    res.send((jsonString));
+    res.status(200).send((jsonString));
   });
 };
