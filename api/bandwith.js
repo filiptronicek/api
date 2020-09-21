@@ -61,7 +61,10 @@ module.exports = (_req, res) => {
                   res.setHeader("Cache-Control", "s-maxage=86400");
                   res.status(200).send({
                     status: "success",
-                    result: { bytes: total, humanReadable: formatBytes(total, 2) },
+                    result: {
+                      bytes: total,
+                      humanReadable: formatBytes(total, 2),
+                    },
                   });
                 }
               });
