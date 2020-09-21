@@ -34,7 +34,7 @@ function formatBytes(bytes, decimals = 0) {
 }
 
 export default (_req, res) => {
-  global.bandwidths = [];
+  let bandwidths = [];
 
   fetch(vercelEndpoint, VercelFetchConfig)
     .then((responce) => responce.json())
