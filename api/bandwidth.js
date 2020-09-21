@@ -53,9 +53,14 @@ export default (_req, res) => {
               CloudFlareFetchConfig
             )
               .then((response) => response.json())
-              .then((resp) => CloudFlareBandwidths.push(resp.result.totals.bandwidth.all))
+              .then((resp) =>
+                CloudFlareBandwidths.push(resp.result.totals.bandwidth.all)
+              )
               .then(() => {
-                const CloudFlareSum = CloudFlareBandwidths.reduce((a, b) => a + b, 0);
+                const CloudFlareSum = CloudFlareBandwidths.reduce(
+                  (a, b) => a + b,
+                  0
+                );
                 const total = CloudFlareSum + VCband;
                 if (i++ === resp.result.length - 1) {
                   res.setHeader("Cache-Control", "s-maxage=86400");
