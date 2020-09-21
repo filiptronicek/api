@@ -69,7 +69,6 @@ export default (_req, res) => {
                 }
               });
           });
-        })
-        .catch((err) => console.error(err));
+        });
     });
 };
