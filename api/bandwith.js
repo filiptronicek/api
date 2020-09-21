@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 require("dotenv").config();
 
 const CFAuth = process.env.CF_TOKEN;
@@ -33,7 +33,7 @@ function formatBytes(bytes, decimals = 0) {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 }
 
-module.exports = (_req, res) => {
+export default (_req, res) => {
   global.bandwidths = [];
 
   fetch(vercelEndpoint, VercelFetchConfig)
