@@ -34,7 +34,7 @@ function formatBytes(bytes, decimals = 0) {
 }
 
 export default (_req, res) => {
-  let bandwidths = [];
+  let CloudFlareBandwidths = [];
 
   fetch(vercelEndpoint, VercelFetchConfig)
     .then((responce) => responce.json())
@@ -53,10 +53,10 @@ export default (_req, res) => {
               CloudFlareFetchConfig
             )
               .then((response) => response.json())
-              .then((resp) => bandwidths.push(resp.result.totals.bandwidth.all))
+              .then((resp) => CloudFlareBandwidths.push(resp.result.totals.bandwidth.all))
               .then(() => {
-                const sum = bandwidths.reduce((a, b) => a + b, 0);
-                const total = sum + VCband;
+                const CloudFlareSum = CloudFlareBandwidths.reduce((a, b) => a + b, 0);
+                const total = CloudFlareSum + VCband;
                 if (i++ === resp.result.length - 1) {
                   res.setHeader("Cache-Control", "s-maxage=86400");
                   res.status(200).send({
