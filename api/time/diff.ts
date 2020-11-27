@@ -4,6 +4,5 @@ export default (request: NowRequest, response: NowResponse) => {
   const now = new Date().getTime();
   const clientnow = request.query.ts;
   const clientTimeStamp = parseInt(clientnow);
-  console.log(clientTimeStamp);
   response.status(200).send({"status": "success", "result": { s: Math.round((now - clientTimeStamp) / 1000), ms: now - clientTimeStamp}});
 }
