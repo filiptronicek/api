@@ -27,5 +27,15 @@ The time API is availible at `https://trnck.dev/time`
 }
 ```
 
+### JS Implementation
+```js
+const timestamp = Date.now();
+fetch(`https://time.filiptronicek.workers.dev/?ts=${timestamp}`).then(f => f.json()).then(f => {
+  const nowstamp = Date.now()  
+  console.table({adjusted: Math.round(f.result.ms - (nowstamp - timestamp) / 2), raw: f.result.ms})
+})
+```
+
+
 ### Limitations
 Due to the [One Way Latency problem](http://twistedoakstudios.com/blog/Post2353_when-one-way-latency-doesnt-matter), there is no way to calculate the exact time that passes between the client and the server.
