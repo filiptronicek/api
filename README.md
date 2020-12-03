@@ -30,7 +30,7 @@ The time API is availible at `https://trnck.dev/time`
 ### JS Implementation
 ```js
 const timestamp = Date.now();
-fetch(`https://time.filiptronicek.workers.dev/?ts=${timestamp}`).then(f => f.json()).then(f => {
+fetch(`https://trnck.dev/time?ts=${timestamp}`).then(f => f.json()).then(f => {
   const nowstamp = Date.now()  
   console.table({adjusted: Math.round(f.result.ms - (nowstamp - timestamp) / 2), raw: f.result.ms})
 })
