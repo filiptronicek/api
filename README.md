@@ -20,3 +20,6 @@ The time API is availible at `https://trnck.dev/time`
   }
 }
 ```
+
+### Limitations
+Due to the [One Way Latency problem](http://twistedoakstudios.com/blog/Post2353_when-one-way-latency-doesnt-matter), there is no way to calculate the exact time that passes between the client and the server.
