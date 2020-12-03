@@ -5,6 +5,7 @@ APIs of mine
 | Name of function | Average responce time (ms) |
 |------------------|-----------------------|
 | Time difference  | 32.7 |
+| UNIX time | 241.4 |
 
 ## Time API
 The time API is availible at `https://trnck.dev/time`
