@@ -12,7 +12,7 @@ export default (request: NowRequest, response: NowResponse) => {
         await worker.load();
         await worker.loadLanguage('eng');
         await worker.initialize('eng');
-        const { data: { text } } = await worker.recognize(url);
+        const { data: { text}} = await worker.recognize(url);
         response.status(200).send({status: "success", result: text})
         await worker.terminate();
     })();
