@@ -5,7 +5,7 @@ export default (request: NowRequest, response: NowResponse) => {
     const { url = 'https://tesseract.projectnaptha.com/img/eng_bw.png'} : any  = request.query
 
     const worker = createWorker({
-        logger: m => console.log(m)
+        logger: m => console.log(`${m.status}: ${m.progress * 100}%`)
     });
 
     (async () => {
