@@ -42,6 +42,8 @@ fetch(`https://trnck.dev/time?ts=${timestamp}`).then(f => f.json()).then(f => {
 Due to the [One Way Latency problem](http://twistedoakstudios.com/blog/Post2353_when-one-way-latency-doesnt-matter), there is no way to calculate the exact time that passes between the client and the server.
 
 ## Ping API
+The ping API is availible at `https://api.trnck.dev/ping`
+
 An API to ping a URL or IP adress, accepts any URL
 ### GET Parameters
 | Name | Description | Example |
