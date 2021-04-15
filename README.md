@@ -68,3 +68,6 @@ A simle API for making the server respond with a certain status code
 | Name | Type | Description | Example |
 |------|------|-------------|---------|
 | code | int | Status code to mock | 418 |
+
+### Example request
+[`https://api.trnck.dev/http/418`](https://api.trnck.dev/http/418)
