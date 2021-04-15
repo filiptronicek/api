@@ -60,3 +60,11 @@ An API to ping a URL or IP adress, accepts any URL
   }
 }
 ```
+
+## HTTP status mock API
+A simle API for making the server respond with a certain status code
+
+### GET Parameters
+| Name | Type | Description | Example |
+|------|------|-------------|---------|
+| code | int | Status code to mock | 418 |
