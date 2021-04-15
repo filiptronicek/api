@@ -12,6 +12,10 @@
       "dest": "/api/status"
     },
     {
+      "src": "/http/(.*)",
+      "dest": "/api/http/status?code=$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/$1"
     }
